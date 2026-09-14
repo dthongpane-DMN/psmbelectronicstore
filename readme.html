@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="lo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PBSM Stock — ຄູ່ມືຕິດຕັ້ງ / Setup Guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;500;700&family=Noto+Serif+Lao:wght@700&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+:root{--bg:#FAF8F3;--surface:#fff;--ink:#1B2420;--muted:#77837C;--line:#E3DED2;--brand:#0E6B57;--brand-soft:#DFEDE8;--warn:#9C6B12;--warn-soft:#F8EEDA;
+--lao:"Noto Sans Lao","Lao UI","Leelawadee UI",system-ui,sans-serif;--display:"Noto Serif Lao","Noto Sans Lao",Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1412;--surface:#161C19;--ink:#E7EDE9;--muted:#8C9993;--line:#2A3531;--brand:#54C2A4;--brand-soft:#14302A;--warn:#DFAB4C;--warn-soft:#322714}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--lao);line-height:1.6;font-size:15px}
+.wrap{max-width:780px;margin:0 auto;padding:36px 20px 80px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:27px;letter-spacing:-.01em}
+h2{font-size:19px;margin:36px 0 12px;padding-top:20px;border-top:1px solid var(--line)}
+h3{font-size:15.5px;margin:20px 0 6px}
+p{margin:8px 0}
+.lead{color:var(--muted);margin-top:6px}
+.en{color:var(--muted);font-size:13.5px;display:block}
+code,.code{font-family:var(--mono);font-size:12.5px}
+.code{display:block;background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:12px 14px;white-space:pre;overflow-x:auto;margin:10px 0;line-height:1.5}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:16px 18px;margin:12px 0}
+.note{background:var(--warn-soft);border:1px solid var(--warn);color:var(--warn);border-radius:9px;padding:11px 14px;margin:14px 0;font-size:13.5px;font-weight:600}
+ol,ul{padding-left:20px;margin:8px 0}
+li{margin:5px 0}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--brand-soft);color:var(--brand);font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.badge{display:inline-block;background:var(--brand-soft);color:var(--brand);border-radius:99px;padding:2px 10px;font-size:12px;font-weight:700}
+.files{font-family:var(--mono);font-size:12.5px}
+@media print{body{background:#fff;color:#000}.wrap{padding:0}h2{page-break-after:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<span class="badge">PBSM Electronics</span>
+<h1>ລະບົບສະຕັອກ ແລະ ອອກບິນ — ຄູ່ມືຕິດຕັ້ງ</h1>
+<p class="lead">Stock &amp; Billing system — installation and setup guide<br>ຕິດຕັ້ງໃນ PC ແລະ ໂທລະສັບ · ແຊຂໍ້ມູນຫຼາຍຄົນ · ໃຊ້ໄດ້ແມ່ນແຕ່ຕອນເນັດຂາດ</p>
+
+<h2>1 · ໄຟລ໌ໃນຊຸດນີ້ <span class="en">What is in this package</span></h2>
+<table>
+<thead><tr><th>ໄຟລ໌ / File</th><th>ໃຊ້ເຮັດຫຍັງ / Purpose</th></tr></thead>
+<tbody>
+<tr><td class="files">index.html</td><td>ຕົວແອັບທັງໝົດ (ໜ້າດຽວ, ບໍ່ຕ້ອງ build)<span class="en">The whole application — one file, no build step</span></td></tr>
+<tr><td class="files">manifest.webmanifest</td><td>ຂໍ້ມູນແອັບ ເພື່ອໃຫ້ຕິດຕັ້ງໄດ້<span class="en">Makes it installable as an app</span></td></tr>
+<tr><td class="files">sw.js</td><td>ເຮັດໃຫ້ເປີດໃຊ້ໄດ້ຕອນເນັດຂາດ<span class="en">Service worker — offline support</span></td></tr>
+<tr><td class="files">icon-*.png</td><td>ໄອຄອນແອັບ<span class="en">App icons</span></td></tr>
+<tr><td class="files">supabase-setup.sql</td><td>ຄຳສັ່ງສ້າງຕາຕະລາງຖານຂໍ້ມູນ<span class="en">Database table setup</span></td></tr>
+<tr><td class="files">pbsm-import-template.csv</td><td>ແບບຟອມນຳເຂົ້າລາຍການສີນຄ້າ<span class="en">Product import template</span></td></tr>
+</tbody></table>
+
+<h2>2 · ເອົາຂຶ້ນເວັບ <span class="en">Put it online</span></h2>
+<p>ແອັບຕ້ອງເປີດຜ່ານ <b>https://</b> ຈຶ່ງຈະຕິດຕັ້ງໄດ້ — ເປີດຈາກໄຟລ໌ໃນເຄື່ອງ (file://) ຈະຕິດຕັ້ງບໍ່ໄດ້.
+<span class="en">The app must be served over https:// to be installable — opening the file directly will not work.</span></p>
+
+<h3>ວິທີ ກ · Netlify Drop <span class="en">— ງ່າຍທີ່ສຸດ, ບໍ່ຕ້ອງໃຊ້ຄຳສັ່ງ / easiest, no command line</span></h3>
+<ol>
+<li>ເປີດ <code>app.netlify.com/drop</code></li>
+<li>ລາກ <b>ໂຟລເດີທັງໝົດ</b> (ບໍ່ແມ່ນໄຟລ໌ zip) ໄປວາງໃນໜ້ານັ້ນ</li>
+<li>ຈະໄດ້ລິ້ງ https ທັນທີ — ສ້າງບັນຊີຟຣີເພື່ອໃຫ້ລິ້ງຢູ່ຖາວອນ ແລະ ປ່ຽນຊື່ໄດ້</li>
+</ol>
+
+<h3>ວິທີ ຂ · Vercel</h3>
+<p>ຈາກໃນໂຟລເດີນີ້ ແລ່ນຄຳສັ່ງ: <span class="en">Run from inside this folder:</span></p>
+<div class="code">npx vercel deploy --prod --yes</div>
+<div class="note">⚠ ໃນບັນຊີ Vercel ຂອງເຈົ້າມີ project ຊື່ <code>cbf-stock</code> ທີ່ອັບໂຫຼດບໍ່ຄົບ ໃຊ້ບໍ່ໄດ້ — ໃຫ້ລຶບຖິ້ມ ຫຼື deploy ທັບ.<br>
+<span style="font-weight:400">A half-uploaded <code>cbf-stock</code> project exists in your Vercel account — redeploy over it with the command above, or delete it.</span></div>
+
+<h3>ວິທີ ຄ · Server ຂອງໂຮງງານ <span class="en">— ຂໍ້ມູນບໍ່ອອກນອກ / on-premise</span></h3>
+<p>ເອົາໄຟລ໌ທັງໝົດໃສ່ web server ໃດກໍໄດ້ (nginx, Apache, IIS). ຕ້ອງເປັນ https ຫຼື <code>localhost</code>.
+<span class="en">Copy the files to any web server. https or localhost is required.</span></p>
+
+<h2>3 · ສ້າງຖານຂໍ້ມູນກາງ <span class="en">Create the shared database</span></h2>
+<p>ຂັ້ນຕອນນີ້ເຮັດ <b>ເທື່ອດຽວ</b> — ເປັນສິ່ງທີ່ເຮັດໃຫ້ທຸກເຄື່ອງເຫັນຂໍ້ມູນດຽວກັນ.
+<span class="en">Do this once — it is what lets every device see the same data.</span></p>
+<ol>
+<li>ສ້າງບັນຊີຟຣີທີ່ <code>supabase.com</code> → <b>New project</b> (ເລືອກ region <b>Singapore</b> ຈະໄວທີ່ສຸດສຳລັບລາວ)</li>
+<li>ໄປ <b>SQL Editor</b> → ວາງເນື້ອໃນຂອງ <code>supabase-setup.sql</code> → ກົດ <b>Run</b></li>
+<li>ໄປ <b>Settings → API</b> → ສຳເນົາ <b>Project URL</b> ແລະ <b>anon public key</b></li>
+<li>ເປີດແອັບ → ໜ້າ <b>ຊິງຄ໌ &amp; ຕິດຕັ້ງ</b> → ວາງສອງຄ່ານັ້ນ → <b>ບັນທຶກ &amp; ທົດສອບ</b></li>
+</ol>
+<p>ຖ້າຂຶ້ນ <b>✓ ຊິງຄ໌ເປີດຢູ່</b> ແປວ່າສຳເລັດ. <span class="en">“Synced” means it worked.</span></p>
+
+<h2>4 · ໃຫ້ພະນັກງານໃຊ້ນຳ <span class="en">Add your team</span></h2>
+<p>ໃນໜ້າ <b>ຊິງຄ໌ &amp; ຕິດຕັ້ງ</b> ຈະມີ <b>ລິ້ງຕັ້ງຄ່າ</b> ແລະ ປຸ່ມ <b>QR</b>.
+ພະນັກງານເປີດລິ້ງນັ້ນ (ຫຼື ສະແກນ QR) <b>ເທື່ອດຽວ</b> — ເຄື່ອງຂອງລາວຈະເຊື່ອມກັບຖານຂໍ້ມູນດຽວກັນທັນທີ ໂດຍບໍ່ຕ້ອງພິມ key ເອງ.</p>
+<p class="en">Open “Sync &amp; Install”, copy the setup link or show the QR code. A colleague opens it once and their device is connected — nothing to type.</p>
+<div class="note">⚠ ລະບົບນີ້ <b>ບໍ່ມີການ login</b> ຕາມທີ່ເຈົ້າເລືອກ — ໃຜມີລິ້ງນັ້ນກໍເຂົ້າເຖິງ ແລະ ແກ້ຂໍ້ມູນໄດ້. ຢ່າສົ່ງໃຫ້ຄົນນອກທີມ ແລະ ຢ່າໂພສໃນກຸ່ມສາທາລະນະ.<br>
+<span style="font-weight:400">There is no login, as requested. Anyone with the link can read and edit. Keep it inside the team.</span></div>
+
+<h2>5 · ຕິດຕັ້ງເປັນແອັບ <span class="en">Install as an app</span></h2>
+<table>
+<thead><tr><th>ເຄື່ອງ / Device</th><th>ວິທີ / How</th></tr></thead>
+<tbody>
+<tr><td><b>PC — Chrome / Edge</b></td><td>ເປີດລິ້ງ → ກົດໄອຄອນ <b>ຕິດຕັ້ງ (⊞)</b> ທາງຂວາຂອງຊ່ອງ address → Install<span class="en">Or menu → Install app. It then opens in its own window like a normal program.</span></td></tr>
+<tr><td><b>Android</b></td><td>Chrome → ເມນູ ⋮ → <b>ຕິດຕັ້ງແອັບ / Add to Home screen</b></td></tr>
+<tr><td><b>iPhone / iPad</b></td><td>ຕ້ອງໃຊ້ <b>Safari</b> → ປຸ່ມ Share ⤴ → <b>Add to Home Screen</b><span class="en">Chrome on iOS cannot install web apps — use Safari.</span></td></tr>
+</tbody></table>
+<p>ຕິດຕັ້ງແລ້ວຈະມີໄອຄອນຢູ່ໜ້າຈໍ ແລະ ເປີດໃຊ້ໄດ້ເຖິງແມ່ນເນັດຂາດ — ຂໍ້ມູນທີ່ບັນທຶກຕອນເນັດຂາດຈະສົ່ງຂຶ້ນເອງເມື່ອເນັດກັບມາ.
+<span class="en">Once installed it works offline; anything saved offline is sent up automatically when the connection returns.</span></p>
+
+<h2>6 · ນຳເຂົ້າລາຍການສີນຄ້າຈາກ Excel <span class="en">Import products from Excel</span></h2>
+<p>ໜ້າ <b>ລາຍການສີນຄ້າ</b> → <b>ນຳເຂົ້າຈາກ Excel</b>. ຮັບໄດ້ທັງ <code>.xlsx</code>, <code>.xls</code> ແລະ <code>.csv</code>.</p>
+<ol>
+<li>ເລືອກໄຟລ໌ → ລະບົບຈະຈັບຄູ່ຫົວຄໍລຳໃຫ້ເອງ (ລາວ ຫຼື ອັງກິດ)</li>
+<li>ກວດເບິ່ງການຈັບຄູ່ — ຄໍລຳໃດບໍ່ໃຊ້ ເລືອກ “ບໍ່ໃຊ້” ໄດ້</li>
+<li>ເບິ່ງຕົວຢ່າງ (ໃໝ່ / ອັບເດດ) ແລ້ວກົດ <b>ນຳເຂົ້າ</b></li>
+</ol>
+<p>ຖ້າມີຄໍລຳ <b>ຈຳນວນ</b> ນຳ, ລະບົບຈະສ້າງສະຕັອກເປີດໃຫ້ເລີຍ ພ້ອມ Lot, ວັນໝົດອາຍຸ ແລະ ສາງ. ລາຍການທີ່ <b>ລະຫັດ</b> ຊ້ຳກັບຂອງເກົ່າຈະຖືກອັບເດດ ບໍ່ແມ່ນສ້າງໃໝ່.</p>
+<p class="en">A quantity column also creates the opening stock, with its lot, expiry and warehouse. Rows whose code already exists update that product instead of duplicating it.</p>
+<div class="card"><b>ຄໍລຳທີ່ຮອງຮັບ / Columns understood</b><br>
+<span class="en" style="font-size:13px">ລະຫັດ · ຊື່ສີນຄ້າ · Item name · ຫົວໜ່ວຍ · ໝວດ · ຕົ້ນທຶນ · ລາຄາຂາຍ · ຈຸດສັ່ງຊື້ · ຈຳນວນ · Lot · ວັນໝົດອາຍຸ · ສາງ<br>
+code · name · unit · category · cost · price · reorder · qty · lot · expiry · warehouse</span><br>
+<span style="font-size:13.5px">ຕ້ອງມີຢ່າງໜ້ອຍ <b>ລະຫັດ</b> ຫຼື <b>ຊື່ສີນຄ້າ</b> — ນອກນັ້ນເລືອກໄດ້. ໃຊ້ <code>pbsm-import-template.csv</code> ເປັນຕົວຢ່າງ.</span></div>
+
+<h2>6b · ໃສ່ໂລໂກ້ຮ້ານ <span class="en">Add your shop logo</span></h2>
+<p>ໜ້າ <b>ຕັ້ງຄ່າ</b> → ຫ້ອງ <b>ໂລໂກ້ຮ້ານ</b> → <b>ເລືອກຮູບ</b> (PNG ຫຼື JPG, ພື້ນຫຼັງໃສກໍໄດ້).
+ໂລໂກ້ຈະໄປປາກົດ <b>ໜ້າຊື່ຮ້ານ</b> ໃນແຖບຊ້າຍມື ແລະ ຢູ່ <b>ຫົວໃບບິນຂາຍ, ໃບສະເໜີລາຄາ, ໃບຮັບເງິນ ແລະ ລາຍງານ</b> ທຸກໃບ.</p>
+<p class="en">Settings → Shop logo → Choose image. It appears beside the shop name in the sidebar and at the top of every printed document.</p>
+<p>ຮູບຈະຖືກຫຍໍ້ໃຫ້ອັດຕະໂນມັດ ແລະ ເກັບໄວ້ນຳຖານຂໍ້ມູນ — ຕັ້ງເທື່ອດຽວ ທຸກເຄື່ອງທີ່ແຊຂໍ້ມູນນຳກັນຈະເຫັນຄືກັນ. ປ່ຽນ ຫຼື ລຶບອອກຕອນໃດກໍໄດ້ດ້ວຍປຸ່ມ <b>ລຶບໂລໂກ້</b>.
+<span class="en">The image is resized automatically and stored with the data, so every device that shares the database picks it up.</span></p>
+<div class="note">ໂລໂກ້ນີ້ໃຊ້ໃນແອັບ ແລະ ໃນເອກະສານທີ່ພິມ. ສ່ວນ <b>ໄອຄອນຕອນຕິດຕັ້ງແອັບ</b> (ທີ່ຂຶ້ນໜ້າຈໍມືຖື) ຍັງເປັນ “PB” ສີຂຽວ — ຖ້າຢາກໃຫ້ເປັນໂລໂກ້ຮ້ານນຳ ສົ່ງໄຟລ໌ໂລໂກ້ມາໃຫ້ຂ້ອຍ ແລ້ວຂ້ອຍຈະສ້າງ icon-192 / icon-512 ໃໝ່ໃຫ້.<br>
+<span style="font-weight:400">The installed app icon is still the green “PB” mark — send me the logo file and I will rebuild the icon PNGs from it.</span></div>
+
+<h2>7 · ໃບຮັບເງິນ ແລະ ຫຼາຍສາງ <span class="en">Receipts and warehouses</span></h2>
+<h3>ໃບຮັບເງິນ <span class="en">Receipts</span></h3>
+<p>ໜ້າ <b>ໃບຮັບເງິນ</b> ສະແດງບິນທີ່ຍັງຄ້າງຊຳລະທັງໝົດ. ກົດ <b>ຮັບເງິນ</b> ໃສ່ບິນໃດກໍໄດ້ → ເລືອກບິນ (ຮັບເງິນເທື່ອດຽວຫຼາຍບິນໄດ້) → ໃສ່ຈຳນວນ → ບັນທຶກ ແລ້ວພິມໄດ້ເລີຍ.
+ຈຳນວນເງິນຈະຂຽນເປັນຕົວໜັງສືລາວໃນໃບຮັບເງິນໃຫ້ອັດຕະໂນມັດ. ບິນຈະຂຶ້ນສະຖານະ <b>ຊຳລະບາງສ່ວນ</b> ຫຼື <b>ຊຳລະຄົບ</b> ເອງ.</p>
+<p class="en">One receipt can settle several invoices. The Lao amount-in-words line is generated automatically, and each invoice's paid / partial / unpaid status follows from the receipts.</p>
+<h3>ຫຼາຍສາງ <span class="en">Warehouses</span></h3>
+<p>ໜ້າ <b>ສາງ &amp; ໂອນຍ້າຍ</b> → ສ້າງສາງໄດ້ຕາມຕ້ອງການ. ຮັບເຂົ້າສະຕັອກຕ້ອງເລືອກສາງ, ແລະ ໃບບິນຂາຍກໍເລືອກສາງທີ່ຈະຕັດອອກ — ລະບົບຈະຕັດແບບ <b>FEFO</b> (Lot ໝົດອາຍຸກ່ອນ ອອກກ່ອນ) ສະເພາະໃນສາງນັ້ນ.
+ການ <b>ໂອນຍ້າຍ</b> ຈະຍ້າຍ Lot ພ້ອມວັນໝົດອາຍຸ ແລະ ຕົ້ນທຶນ ໄປສາງປາຍທາງ ແລະ ເກັບປະຫວັດໄວ້.</p>
+<p class="en">Stock is deducted FEFO within the chosen warehouse. Transfers carry the lot number, expiry and cost across and are kept in a transfer history.</p>
+
+<h2>8 · ສຳຮອງຂໍ້ມູນ <span class="en">Backups</span></h2>
+<p>Supabase ສຳຮອງໃຫ້ເອງຢູ່ແລ້ວ, ແຕ່ໜ້າ <b>ຊິງຄ໌ &amp; ຕິດຕັ້ງ</b> ຍັງມີ <b>ສົ່ງອອກໄຟລ໌ສຳຮອງ</b> (JSON) ແລະ <b>ກູ້ຄືນຈາກໄຟລ໌</b> ນຳ — ແນະນຳໃຫ້ດາວໂຫຼດເກັບໄວ້ເດືອນລະເທື່ອ.
+ນອກນັ້ນ ໜ້າ <b>ຕັ້ງຄ່າ</b> ແລະ <b>ສະຫຼຸບປະຈຳເດືອນ</b> ສົ່ງອອກເປັນ CSV ໄດ້ ສຳລັບເອົາໄປໃຊ້ຕໍ່ໃນ Excel.</p>
+<p class="en">Monthly JSON backup is recommended. Stock and monthly report also export to CSV for Excel.</p>
+
+<p style="margin-top:40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px">
+ຮ້ານ PBSM ອິເລັກໂທຼນິກ · PBSM Electronics — ປ່ຽນຊື່ຮ້ານ, ໂລໂກ້, ທີ່ຢູ່, ເລກອາກອນ, ບັນຊີທະນາຄານ, ອັດຕາແລກປ່ຽນ ແລະ VAT ໄດ້ໃນໜ້າ <b>ຕັ້ງຄ່າ</b>.</p>
+
+</div>
+</body>
+</html>
