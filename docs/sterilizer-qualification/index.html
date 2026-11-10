@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="lo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Steam Sterilizer PM &amp; Qualification</title>
+<meta name="description" content="PM programme, SOP, roadmap, process overview and OQ/PQ forms for a steam sterilizer (autoclave) per AAMI, ISO, WHO and PIC/S.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF8F3;--surface:#fff;--ink:#1B2420;--muted:#66726B;--line:#D9D3C5;--brand:#0E6B57;--brand-soft:#DFEDE8;--warn:#8A5D0C;--warn-soft:#F8EEDA;--bad:#9B2C2C;--bad-soft:#F7E1E1;
+--lao:"Noto Sans Lao","Lao UI","Leelawadee UI",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1412;--surface:#161C19;--ink:#E7EDE9;--muted:#93A09A;--line:#2E3A35;--brand:#54C2A4;--brand-soft:#14302A;--warn:#DFAB4C;--warn-soft:#322714;--bad:#E58A8A;--bad-soft:#3A1F1F}}
+:root[data-theme="dark"]{--bg:#0F1412;--surface:#161C19;--ink:#E7EDE9;--muted:#93A09A;--line:#2E3A35;--brand:#54C2A4;--brand-soft:#14302A;--warn:#DFAB4C;--warn-soft:#322714;--bad:#E58A8A;--bad-soft:#3A1F1F}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--lao);line-height:1.65;font-size:14.5px}
+.wrap{max-width:1000px;margin:0 auto;padding:32px 16px 80px}
+h1,h2,h3,h4{margin:0;line-height:1.35;text-wrap:balance}
+h1{font-size:26px}
+h2{font-size:20px;margin:44px 0 12px;padding-top:18px;border-top:2px solid var(--brand);color:var(--brand)}
+h3{font-size:16px;margin:22px 0 8px}
+h4{font-size:14.5px;margin:16px 0 6px}
+p{margin:6px 0}
+.en{color:var(--muted);font-size:12.5px}
+.lead{color:var(--muted)}
+code,.mono{font-family:var(--mono);font-size:12.5px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:12px 0}
+.note{background:var(--warn-soft);border-left:4px solid var(--warn);border-radius:6px;padding:10px 14px;margin:12px 0;font-size:13.5px}
+.crit{background:var(--bad-soft);border-left:4px solid var(--bad);border-radius:6px;padding:10px 14px;margin:12px 0;font-size:13.5px}
+.tbl{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:13px;background:var(--surface)}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--brand-soft);color:var(--brand);font-weight:700;font-size:12.5px}
+td.c,th.c{text-align:center}
+.blank{min-width:70px}
+.box{display:inline-block;width:13px;height:13px;border:1.5px solid var(--ink);border-radius:2px;vertical-align:-2px;margin-right:4px}
+ol,ul{padding-left:22px;margin:6px 0}
+li{margin:3px 0}
+nav.toc{columns:2;column-gap:28px;font-size:13.5px}
+nav.toc a{color:var(--brand);text-decoration:none}
+@media (max-width:640px){nav.toc{columns:1}}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch;margin:12px 0}
+.step{flex:1 1 140px;background:var(--surface);border:1.5px solid var(--brand);border-radius:9px;padding:9px 10px;font-size:12.5px;position:relative}
+.step b{display:block;color:var(--brand);font-size:13px}
+.step .n{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.gate{flex:1 1 140px;background:var(--warn-soft);border:1.5px dashed var(--warn);border-radius:9px;padding:9px 10px;font-size:12.5px}
+.gate b{color:var(--warn)}
+.formhead td{font-size:12.5px}
+.sig td{height:38px}
+.badge{display:inline-block;background:var(--brand-soft);color:var(--brand);border-radius:99px;padding:1px 9px;font-size:11.5px;font-weight:700}
+.page{page-break-before:always}
+@media print{
+  body{background:#fff;color:#000;font-size:11.5pt}
+  .wrap{max-width:none;padding:0}
+  h2{page-break-after:avoid}
+  .noprint{display:none}
+  table{page-break-inside:auto} tr{page-break-inside:avoid}
+  .page{page-break-before:always}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<p class="badge">GMP · PIC/S · WHO · ISO · AAMI</p>
+<h1>ໂປຣແກຣມບຳລຸງຮັກສາ (PM) ແລະ ການຮັບຮອງ OQ/PQ ຂອງໝໍ້ອົບຂ້າເຊື້ອດ້ວຍໄອນ້ຳ</h1>
+<p class="lead">Steam Sterilizer (Autoclave) — Preventive Maintenance Programme, SOP, Roadmap, Process Overview and OQ/PQ Forms</p>
+
+<div class="card formhead tbl">
+<table>
+<tr><th>ເລກທີເອກະສານ / Doc No.</th><td>VMP-ENG-STE-001</td><th>ສະບັບ / Rev.</th><td>00 (Draft)</td></tr>
+<tr><th>ເຄື່ອງ / Equipment</th><td>Steam Sterilizer — ຍີ່ຫໍ້/ລຸ້ນ: ____________ S/N: ________</td><th>ລະຫັດ / Equip. ID</th><td>EQ-STE-___</td></tr>
+<tr><th>ພະແນກ / Dept.</th><td>Engineering / QA / Production</td><th>ວັນທີ / Date</th><td>____/____/______</td></tr>
+</table>
+</div>
+
+<div class="note"><b>ຂໍ້ສົມມຸດຖານ (Assumptions):</b> ບໍ່ພົບຄູ່ມືຂອງເຄື່ອງ — ເອກະສານນີ້ຂຽນສຳລັບ <b>ໝໍ້ອົບໄອນ້ຳແບບ pre-vacuum (porous/hard goods load)</b> ທີ່ໃຊ້ໃນໂຮງງານຢາ. ຄ່າຕົວເລກທັງໝົດ (ອຸນຫະພູມ, ເວລາ, ຄວາມຖີ່) ແມ່ນຄ່າທົ່ວໄປຈາກມາດຕະຖານ — <b>ຕ້ອງກວດທຽບກັບ URS, ຄູ່ມືຜູ້ຜະລິດ ແລະ ການປະເມີນຄວາມສ່ຽງ (ISO 14971 / ICH Q9) ຂອງໂຮງງານກ່ອນອະນຸມັດ.</b> ຊ່ອງ ____ ແມ່ນໃຫ້ຕື່ມຂໍ້ມູນສະເພາະເຄື່ອງ.</div>
+
+<nav class="toc card">
+<b>ສາລະບານ / Contents</b>
+<ol>
+<li><a href="#s1">ມາດຕະຖານອ້າງອີງ ແລະ ຂໍ້ກຳນົດຫຼັກ</a></li>
+<li><a href="#s2">ຂະບວນການປະຕິບັດ (Process Overview)</a></li>
+<li><a href="#s3">Roadmap ຂັ້ນຕອນການດຳເນີນງານ</a></li>
+<li><a href="#s4">ຂະບວນການເຮັດ PM (PM Programme)</a></li>
+<li><a href="#s5">SOP — PM ແລະ ການທົດສອບປະຈຳ</a></li>
+<li><a href="#s6">ຟອມ F-01: PM Checklist</a></li>
+<li><a href="#s7">ຟອມ F-02: OQ Protocol &amp; Report</a></li>
+<li><a href="#s8">ຟອມ F-03: PQ Protocol &amp; Report</a></li>
+<li><a href="#s9">ຟອມ F-04: Deviation / Non-conformance</a></li>
+<li><a href="#s10">ເອກະສານອ້າງອີງ (References)</a></li>
+</ol>
+</nav>
+
+<!-- ============ 1 ============ -->
+<h2 id="s1">1 · ມາດຕະຖານອ້າງອີງ ແລະ ຂໍ້ກຳນົດຫຼັກ <span class="en">Standards and key requirements</span></h2>
+
+<div class="tbl"><table>
+<tr><th>ມາດຕະຖານ</th><th>ຫົວຂໍ້</th><th>ນຳໃຊ້ໃນເອກະສານນີ້ສຳລັບ</th></tr>
+<tr><td><b>ISO 17665:2024</b><br><span class="en">(ແທນ ISO 17665-1:2006, TS 17665-2/-3)</span></td><td>Moist heat sterilization — development, validation, routine control</td><td>ໂຄງສ້າງ IQ/OQ/PQ, ເກນຍອມຮັບ, ການຄວບຄຸມປະຈຳ, ການຮັບຮອງຄືນ</td></tr>
+<tr><td><b>EN 285</b> (+ EN 13060 ສຳລັບເຄື່ອງນ້ອຍ)</td><td>Large steam sterilizers</td><td>ການທົດສອບ: Bowie-Dick, Air leak, Air detector, thermometric test, ຄຸນນະພາບໄອນ້ຳ, ຄວາມແຫ້ງຂອງ load</td></tr>
+<tr><td><b>ANSI/AAMI ST79:2017</b> + A1–A4:2020</td><td>Comprehensive guide to steam sterilization</td><td>ການທົດສອບປະຈຳ (BD ທຸກມື້, BI ຢ່າງໜ້ອຍທຸກອາທິດ), ການປ່ອຍ load, ບັນທຶກ, ການ recall</td></tr>
+<tr><td><b>ANSI/AAMI EQ56 / EQ89</b></td><td>Medical equipment management; maintenance strategies</td><td>ການກຳນົດຄວາມຖີ່ PM ຕາມຄວາມສ່ຽງ, KPI ຂອງ PM</td></tr>
+<tr><td><b>ISO 11140-1 / -4</b></td><td>Chemical indicators (Type 1–6); Bowie-Dick alternative</td><td>ເລືອກ CI ສຳລັບ load ແລະ BD test</td></tr>
+<tr><td><b>ISO 11138-1 / -3</b></td><td>Biological indicators — <i>Geobacillus stearothermophilus</i></td><td>BI ≥10<sup>6</sup> spores, D<sub>121</sub> ≥1.5 min ສຳລັບ PQ ແລະ routine</td></tr>
+<tr><td><b>ISO 14971 / ICH Q9(R1)</b></td><td>Risk management</td><td>FMEA ຂອງເຄື່ອງ, ກຳນົດຄວາມຖີ່ PM ແລະ ຂອບເຂດ validation</td></tr>
+<tr><td><b>ISO 9001 / ISO 13485</b></td><td>QMS</td><td>ການຄວບຄຸມເອກະສານ, ບັນທຶກ, CAPA, change control</td></tr>
+<tr><td><b>ISO/IEC 17025</b></td><td>Calibration laboratories</td><td>ໃບຢັ້ງຢືນການ calibrate ຕ້ອງ traceable</td></tr>
+<tr><td><b>WHO TRS 1019, Annex 3</b> (2019) — App. 6 Qualification, App. 5 Computerized systems</td><td>WHO GMP: guidelines on validation</td><td>URS→DQ→IQ→OQ→PQ, ການຮັບຮອງຄືນເປັນໄລຍະ</td></tr>
+<tr><td><b>WHO TRS 1044, Annex 2</b> (2022)</td><td>WHO GMP for sterile pharmaceutical products</td><td>ຂໍ້ກຳນົດ sterilization (ສອດຄ່ອງກັບ PIC/S Annex 1)</td></tr>
+<tr><td><b>WHO/PAHO</b> Decontamination &amp; Reprocessing of Medical Devices (2016); WHO Medical Equipment Maintenance Programme Overview (2011)</td><td>WHO guidance</td><td>ການທົດສອບປະຈຳ, ໂຄງສ້າງໂປຣແກຣມ PM (inventory → plan → do → KPI)</td></tr>
+<tr><td><b>PIC/S PE 009</b> — Annex 1 (2022), Annex 15, Annex 11</td><td>GMP sterile, qualification &amp; validation, computerized systems</td><td>ຮັບຮອງຄືນ (requalify) ຢ່າງໜ້ອຍປີລະຄັ້ງ, data integrity ຂອງ controller</td></tr>
+</table></div>
+
+<h3>ເກນຍອມຮັບຫຼັກ (Key acceptance criteria) — ໃຊ້ໃນ OQ/PQ</h3>
+<div class="tbl"><table>
+<tr><th>ພາລາມິເຕີ</th><th>ເກນ (ຄ່າທົ່ວໄປ)</th><th>ແຫຼ່ງ</th></tr>
+<tr><td>Sterilization temperature band</td><td>121 °C: 121–124 °C · 134 °C: 134–137 °C (0 ຫາ +3 K)</td><td>EN 285, ISO 17665</td></tr>
+<tr><td>Holding time ຂັ້ນຕ່ຳ</td><td>121 °C ≥15 min · 134 °C ≥3 min (ຫຼື ຕາມ cycle ທີ່ validate)</td><td>EN 285, ISO 17665</td></tr>
+<tr><td>Equilibration time</td><td>≤15 s (chamber ≤800 L); ≤30 s (chamber ໃຫຍ່ກວ່າ)</td><td>EN 285</td></tr>
+<tr><td>ຄວາມແຕກຕ່າງອຸນຫະພູມໃນ chamber/load ໄລຍະ hold</td><td>≤2 K (ທຸກຈຸດ ຢູ່ໃນ band)</td><td>EN 285</td></tr>
+<tr><td>ອຸນຫະພູມວັດແທກ vs ອຸນຫະພູມຄິດໄລ່ຈາກຄວາມດັນໄອນ້ຳອີ່ມຕົວ</td><td>ຕ່າງກັນ ≤2 K</td><td>EN 285</td></tr>
+<tr><td>F<sub>0</sub> (z = 10 K, T<sub>ref</sub> = 121.1 °C)</td><td>Overkill: F<sub>0</sub> ≥15 min ຢູ່ cold spot (ຕາມ URS)</td><td>ISO 17665, PDA TR1</td></tr>
+<tr><td>SAL</td><td>≤10<sup>-6</sup></td><td>ISO 17665, Ph. Eur. 5.1.1</td></tr>
+<tr><td>Air leak (vacuum hold)</td><td>≤1.3 mbar/min (0.13 kPa/min)</td><td>EN 285</td></tr>
+<tr><td>ຄຸນນະພາບໄອນ້ຳ (Steam quality)</td><td>Non-condensable gas ≤3.5 % v/v · Dryness ≥0.95 (metal load ≥0.90) · Superheat ≤25 K</td><td>EN 285</td></tr>
+<tr><td>Clean steam condensate (ໂຮງງານຢາ)</td><td>ໄດ້ຄຸນນະພາບ WFI: Conductivity ≤1.3 µS/cm @25 °C (stage 1), Endotoxin &lt;0.25 EU/mL, TOC ≤500 ppb</td><td>Ph. Eur./USP, PIC/S Annex 1</td></tr>
+<tr><td>ຄວາມແຫ້ງຂອງ load (Load dryness)</td><td>Textile ຄວາມຊື້ນເພີ່ມ ≤1 % · Metal ≤0.2 % · ບໍ່ມີ wet pack</td><td>EN 285, AAMI ST79</td></tr>
+<tr><td>Bowie-Dick</td><td>ປ່ຽນສີສະໝ່ຳສະເໝີ ບໍ່ມີຈຸດອ່ອນ (pass)</td><td>ISO 11140-4, EN 285</td></tr>
+<tr><td>BI</td><td>ທຸກ BI ທີ່ຜ່ານ cycle: ບໍ່ເຕີບໂຕ; Positive control: ເຕີບໂຕ</td><td>ISO 11138</td></tr>
+<tr><td>ຄວາມຖືກຕ້ອງເຊັນເຊີ (thermocouple)</td><td>±0.5 °C ກ່ອນ ແລະ ຫຼັງການສຶກສາ (vs reference traceable)</td><td>ISO 17665, ການປະຕິບັດທົ່ວໄປ</td></tr>
+</table></div>
+
+<!-- ============ 2 ============ -->
+<h2 id="s2" class="page">2 · ຂະບວນການປະຕິບັດ <span class="en">Process Overview — equipment lifecycle</span></h2>
+<p>ວົງຈອນຊີວິດຂອງເຄື່ອງ ຕາມ WHO TRS 1019 App. 6 / PIC/S Annex 15 (V-model). ທຸກຂັ້ນຕອນມີ <b>ປະຕູກວດ (Gate)</b> ທີ່ QA ຕ້ອງອະນຸມັດກ່ອນໄປຂັ້ນຕໍ່ໄປ.</p>
+
+<div class="flow">
+<div class="step"><span class="n">01</span><b>URS</b>User Requirement Spec. — cycle, load, capacity, utilities, data integrity</div>
+<div class="step"><span class="n">02</span><b>Risk Assessment</b>FMEA (ISO 14971/ICH Q9) → ກຳນົດ critical parameters</div>
+<div class="step"><span class="n">03</span><b>DQ</b>Design Qualification — ກວດ design ຂອງຜູ້ຜະລິດ vs URS</div>
+<div class="gate"><b>Gate 1</b><br>QA ອະນຸມັດ URS/DQ → ສັ່ງຊື້</div>
+<div class="step"><span class="n">04</span><b>FAT / SAT</b>ທົດສອບທີ່ໂຮງງານຜູ້ຜະລິດ / ໜ້າງານ</div>
+<div class="step"><span class="n">05</span><b>IQ</b>ຕິດຕັ້ງ, utilities, ເອກະສານ, calibration, P&amp;ID</div>
+<div class="gate"><b>Gate 2</b><br>IQ ຜ່ານ, deviations ປິດ</div>
+<div class="step"><span class="n">06</span><b>OQ</b>ການເຮັດວຽກ, alarm, interlock, empty-chamber heat distribution</div>
+<div class="gate"><b>Gate 3</b><br>OQ ຜ່ານ → ອະນຸຍາດ PQ</div>
+<div class="step"><span class="n">07</span><b>PQ</b>Loaded heat penetration + BI + CI, 3 runs/load pattern</div>
+<div class="gate"><b>Gate 4</b><br>Validation Report ອະນຸມັດ → ປ່ອຍໃຊ້ GMP</div>
+<div class="step"><span class="n">08</span><b>Routine Control</b>BD ທຸກມື້, leak test, BI, ກວດ batch record, parametric release</div>
+<div class="step"><span class="n">09</span><b>PM &amp; Calibration</b>ຕາມແຜນ PM (ພາກ 4) ແລະ SOP (ພາກ 5)</div>
+<div class="step"><span class="n">10</span><b>Change Control</b>ປະເມີນຜົນກະທົບ → requalify ບາງສ່ວນ/ທັງໝົດ</div>
+<div class="step"><span class="n">11</span><b>Periodic Review &amp; Requalification</b>ຢ່າງໜ້ອຍປີລະຄັ້ງ (PIC/S Annex 1, ISO 17665)</div>
+</div>
+
+<h3>ຄວາມຮັບຜິດຊອບ (RACI)</h3>
+<div class="tbl"><table>
+<tr><th>ກິດຈະກຳ</th><th class="c">Engineering</th><th class="c">Validation</th><th class="c">Production</th><th class="c">QC Micro</th><th class="c">QA</th></tr>
+<tr><td>URS / Risk assessment</td><td class="c">R</td><td class="c">R</td><td class="c">C</td><td class="c">C</td><td class="c">A</td></tr>
+<tr><td>IQ / OQ execution</td><td class="c">R</td><td class="c">A/R</td><td class="c">I</td><td class="c">I</td><td class="c">C</td></tr>
+<tr><td>PQ execution</td><td class="c">C</td><td class="c">R</td><td class="c">R</td><td class="c">R (BI incubation)</td><td class="c">A</td></tr>
+<tr><td>Routine tests (BD, leak)</td><td class="c">C</td><td class="c">I</td><td class="c">R</td><td class="c">C</td><td class="c">A (review)</td></tr>
+<tr><td>PM / Calibration</td><td class="c">A/R</td><td class="c">I</td><td class="c">C</td><td class="c">I</td><td class="c">C (review)</td></tr>
+<tr><td>Deviation / CAPA / Change control</td><td class="c">R</td><td class="c">R</td><td class="c">C</td><td class="c">C</td><td class="c">A</td></tr>
+</table></div>
+<p class="en">R = Responsible, A = Accountable, C = Consulted, I = Informed</p>
+
+<!-- ============ 3 ============ -->
+<h2 id="s3" class="page">3 · Roadmap ຂັ້ນຕອນການດຳເນີນງານ <span class="en">Implementation roadmap</span></h2>
+<p>ໄລຍະເວລາຕົວຢ່າງ 16 ອາທິດ ສຳລັບເຄື່ອງ 1 ໜ່ວຍ (ປັບຕາມຈຳນວນ load pattern ແລະ ກຳລັງຄົນ).</p>
+<div class="tbl"><table>
+<tr><th>ໄລຍະ</th><th>ອາທິດ</th><th>ກິດຈະກຳຫຼັກ</th><th>ຜົນໄດ້ຮັບ (Deliverables)</th><th>ເງື່ອນໄຂຜ່ານ (Exit)</th></tr>
+<tr><td><b>0 · ປະເມີນຊ່ອງຫວ່າງ</b><br>Gap assessment</td><td>1–2</td><td>ລວບລວມຄູ່ມື, P&amp;ID, ປະຫວັດສ້ອມ, ບັນທຶກ calibration; ປຽບທຽບກັບ ISO 17665/EN 285/PIC/S</td><td>Gap report, Equipment inventory card</td><td>QA ຮັບຮູ້ gap list</td></tr>
+<tr><td><b>1 · ວາງແຜນ</b><br>Plan &amp; risk</td><td>2–4</td><td>ຂຽນ/ທົບທວນ URS; FMEA; ກຳນົດ load patterns (min/max/worst case); VMP</td><td>URS, FMEA, VMP-ENG-STE-001</td><td>Gate 1 ອະນຸມັດ</td></tr>
+<tr><td><b>2 · ເອກະສານ</b><br>SOP &amp; forms</td><td>3–5</td><td>ອະນຸມັດ SOP (ພາກ 5), ຟອມ F-01…F-04, ຝຶກອົບຮົມ</td><td>SOP ອະນຸມັດ, training records</td><td>ພະນັກງານ ≥100 % ຜ່ານການຝຶກ</td></tr>
+<tr><td><b>3 · Utilities &amp; IQ</b></td><td>5–7</td><td>ກວດ clean steam (NCG, dryness, superheat, condensate WFI), ອາກາດອັດ, ໄຟຟ້າ, ນ້ຳເຢັນ; calibrate ທຸກເຄື່ອງວັດ</td><td>IQ report, calibration certificates</td><td>Gate 2</td></tr>
+<tr><td><b>4 · OQ</b></td><td>7–9</td><td>ທົດສອບຕາມ F-02: alarm/interlock, leak, BD ×3, air detector, empty-chamber heat distribution ×3/cycle, power failure, audit trail</td><td>OQ report</td><td>Gate 3</td></tr>
+<tr><td><b>5 · PQ</b></td><td>9–13</td><td>Heat penetration + BI + CI, 3 runs ຕິດຕໍ່ກັນ/load pattern; ບົ່ມ BI 7 ມື້ (ຫຼື ຕາມຜູ້ຜະລິດ BI)</td><td>PQ report, F<sub>0</sub> calculation, BI results</td><td>Gate 4</td></tr>
+<tr><td><b>6 · ປ່ອຍໃຊ້ ແລະ PM</b></td><td>13–14</td><td>Validation summary report; ກຳນົດ routine monitoring; ເປີດແຜນ PM ໃນ CMMS</td><td>VSR, PM schedule, logbook</td><td>QA release ເຄື່ອງ</td></tr>
+<tr><td><b>7 · ຕິດຕາມ ແລະ ປັບປຸງ</b></td><td>14–16 → ຕໍ່ເນື່ອງ</td><td>ທົບທວນ KPI ລາຍເດືອນ, ແນວໂນ້ມ (trend) BD/leak/calibration; Periodic review ປີລະຄັ້ງ; requalify ປີລະຄັ້ງ</td><td>Monthly KPI, Annual review report</td><td>KPI ຕາມເປົ້າ</td></tr>
+</table></div>
+
+<!-- ============ 4 ============ -->
+<h2 id="s4" class="page">4 · ຂະບວນການເຮັດ PM <span class="en">Preventive maintenance programme</span></h2>
+<p>ໂຄງສ້າງຕາມ WHO Medical Equipment Maintenance Programme Overview ແລະ AAMI EQ89 — ກຳນົດຄວາມຖີ່ຕາມຄວາມສ່ຽງ ແລະ ຄຳແນະນຳຜູ້ຜະລິດ.</p>
+
+<h3>4.1 ວົງຈອນການເຮັດ PM (PM workflow)</h3>
+<div class="flow">
+<div class="step"><span class="n">1</span><b>ແຜນ</b>ຕາຕະລາງ PM ປະຈຳປີໃນ CMMS/Excel</div>
+<div class="step"><span class="n">2</span><b>Work Order</b>ອອກໃບງານ ລ່ວງໜ້າ ≥7 ມື້; ປະສານ Production</div>
+<div class="step"><span class="n">3</span><b>ກະກຽມ</b>ອາໄຫຼ່, ເຄື່ອງມື calibrated, SOP, PPE</div>
+<div class="step"><span class="n">4</span><b>ຢຸດເຄື່ອງ &amp; LOTO</b>ຕັດໄຟ, ປິດໄອນ້ຳ, ລະບາຍຄວາມດັນ, ລໍຖ້າເຢັນ</div>
+<div class="step"><span class="n">5</span><b>ປະຕິບັດ</b>ຕາມ F-01; ບັນທຶກທັນທີ (ALCOA+)</div>
+<div class="step"><span class="n">6</span><b>ທົດສອບຫຼັງ PM</b>Leak test + BD (+ BI ຖ້າມີການປ່ຽນ critical part)</div>
+<div class="gate"><b>ຜ່ານ?</b><br>ບໍ່ຜ່ານ → Deviation F-04 → CM/CAPA</div>
+<div class="step"><span class="n">7</span><b>QA review</b>ກວດບັນທຶກ, ປະເມີນ change control</div>
+<div class="step"><span class="n">8</span><b>ປ່ອຍໃຊ້</b>ຕິດປ້າຍ "Ready for use"</div>
+<div class="step"><span class="n">9</span><b>Trend &amp; KPI</b>ວິເຄາະລາຍເດືອນ, ປັບຄວາມຖີ່ PM</div>
+</div>
+
+<h3>4.2 ການກຳນົດຄວາມຖີ່ຕາມຄວາມສ່ຽງ <span class="en">Risk-based interval (adapted from AAMI EQ89 / Fennigkoh–Smith)</span></h3>
+<div class="tbl"><table>
+<tr><th>ປັດໄຈ</th><th>ຄະແນນ</th><th>ໝໍ້ອົບໄອນ້ຳ</th></tr>
+<tr><td>Function (ໜ້າທີ່)</td><td>1–10</td><td>9 — ຂ້າເຊື້ອ (critical to product sterility)</td></tr>
+<tr><td>Risk (ຜົນກະທົບເມື່ອເສຍ)</td><td>1–5</td><td>5 — ຜະລິດຕະພັນບໍ່ປອດເຊື້ອ / ອັນຕະລາຍຄວາມດັນ</td></tr>
+<tr><td>Maintenance requirement</td><td>1–5</td><td>5 — ກົນຈັກ, ລະບົບໄອນ້ຳ, ປ້ຳສູນຍາກາດ</td></tr>
+<tr><td>Incident history</td><td>−2 ຫາ +2</td><td>__ (ຈາກປະຫວັດ)</td></tr>
+<tr><td colspan="2"><b>Equipment Management Number = ລວມ</b></td><td><b>≥19 → PM ທຸກ 6 ເດືອນ ຫຼື ຖີ່ກວ່າ</b> + ການທົດສອບປະຈຳ</td></tr>
+</table></div>
+
+<h3>4.3 ຕາຕະລາງ PM ແລະ ການທົດສອບປະຈຳ <span class="en">PM &amp; routine test matrix</span></h3>
+<div class="tbl"><table>
+<tr><th>ຄວາມຖີ່</th><th>ລາຍການ</th><th>ຜູ້ເຮັດ</th><th>ອ້າງອີງ</th></tr>
+<tr><td><b>ທຸກມື້</b><br>(ກ່ອນ load ທຳອິດ)</td><td>• ເຮັດຄວາມສະອາດ drain strainer, ກວດ door gasket ດ້ວຍຕາ<br>• Warm-up cycle<br>• <b>Air leak test</b> (ຖ້າ controller ມີ auto test)<br>• <b>Bowie-Dick test</b> (pre-vacuum)<br>• ກວດ printout/ເອເລັກໂຕຣນິກ record, ຄວາມດັນ steam supply, ອາກາດອັດ</td><td>Operator</td><td>AAMI ST79, EN 285, ISO 11140-4</td></tr>
+<tr><td><b>ທຸກອາທິດ</b></td><td>• <b>Air leak test</b> (ຖ້າບໍ່ໄດ້ເຮັດທຸກມື້)<br>• <b>BI test</b> (PCD) — ຢ່າງໜ້ອຍທຸກອາທິດ, ແນະນຳທຸກມື້ ແລະ ທຸກ load implant (AAMI)<br>• ທຳຄວາມສະອາດ chamber, rails, trolley<br>• ກວດ door seal (ຮອຍແຕກ, ແຂງ), ລະບົບລັອກ</td><td>Operator / Tech</td><td>AAMI ST79, ISO 11138</td></tr>
+<tr><td><b>ທຸກເດືອນ</b></td><td>• ກວດ steam traps, strainers, check valves<br>• ກວດລະບົບນ້ຳ vacuum pump (ring water), ສຽງ/ສັ່ນ<br>• ກວດ air detector function<br>• ທົດສອບ safety valve ດ້ວຍມື (lift test)<br>• ກວດ door interlock (ເປີດບໍ່ໄດ້ເມື່ອມີຄວາມດັນ)<br>• Clean steam condensate: conductivity/TOC (ຕາມແຜນ WFI)</td><td>Technician</td><td>EN 285, ຜູ້ຜະລິດ</td></tr>
+<tr><td><b>ທຸກ 3 ເດືອນ</b></td><td>• ກວດ/ຂັນ terminal ໄຟຟ້າ, contactors, solenoid valves<br>• ກວດ insulation, ທໍ່ຮົ່ວ<br>• ປ່ຽນ vent filter ຕາມສະພາບ; <b>HEPA vent filter integrity</b> (ຖ້າ Annex 1)<br>• Backup ຂໍ້ມູນ controller, ກວດ audit trail</td><td>Technician / IT</td><td>PIC/S Annex 1, Annex 11</td></tr>
+<tr><td><b>ທຸກ 6 ເດືອນ</b></td><td>• <b>Calibration</b>: temperature probes (chamber, drain, load), pressure transmitters, gauges — 3 ຈຸດ (ຕົວຢ່າງ 100/121/134 °C)<br>• ປ່ຽນ door gasket (ຫຼື ຕາມສະພາບ/ຈຳນວນ cycle)<br>• Overhaul vacuum pump seals, ກວດ heat exchanger<br>• ທົດສອບ steam quality (NCG, dryness, superheat)</td><td>Technician / Vendor (ISO 17025)</td><td>EN 285, ISO 17665</td></tr>
+<tr><td><b>ທຸກປີ</b></td><td>• <b>Requalification</b>: OQ ບາງສ່ວນ (heat distribution) + PQ 1 run/load pattern (ຫຼື ຕາມການປະເມີນຄວາມສ່ຽງ)<br>• ກວດ pressure vessel ຕາມກົດໝາຍ, ທົດສອບ/ປ່ຽນ safety valve<br>• Periodic review (ການປ່ຽນແປງ, deviations, trend)<br>• Validation ຂອງ data acquisition/recorder</td><td>Validation / QA / Vendor</td><td>PIC/S Annex 1 &amp; 15, ISO 17665, WHO TRS 1019</td></tr>
+<tr><td><b>ຫຼັງສ້ອມ (Post-repair)</b></td><td>• Minor: leak test + BD<br>• Major (controller, vacuum system, sensor, piping): leak + BD + BI ×3 ຫຼື requalify ຕາມ change control</td><td>Engineering + QA</td><td>AAMI ST79, ISO 17665</td></tr>
+</table></div>
+
+<h3>4.4 ຕົວຊີ້ວັດ (KPI)</h3>
+<div class="tbl"><table>
+<tr><th>KPI</th><th>ສູດ</th><th>ເປົ້າ</th></tr>
+<tr><td>PM compliance</td><td>PM ທີ່ເຮັດທັນ ÷ PM ທີ່ກຳນົດ × 100</td><td>≥95 %</td></tr>
+<tr><td>Calibration on-time</td><td>ເຄື່ອງວັດ calibrate ທັນ ÷ ທັງໝົດ × 100</td><td>100 %</td></tr>
+<tr><td>Bowie-Dick / leak test pass rate</td><td>Pass ÷ ທັງໝົດ × 100</td><td>≥99 %</td></tr>
+<tr><td>MTBF</td><td>ເວລາເຮັດວຽກ ÷ ຈຳນວນເສຍ</td><td>ເພີ່ມຂຶ້ນ (trend)</td></tr>
+<tr><td>MTTR</td><td>ເວລາສ້ອມລວມ ÷ ຈຳນວນເສຍ</td><td>≤8 ຊົ່ວໂມງ</td></tr>
+<tr><td>Availability</td><td>MTBF ÷ (MTBF + MTTR)</td><td>≥97 %</td></tr>
+<tr><td>Deviations ຈາກເຄື່ອງ</td><td>ຈຳນວນ/ເດືອນ</td><td>0 critical</td></tr>
+</table></div>
+
+<!-- ============ 5 ============ -->
+<h2 id="s5" class="page">5 · SOP — ການບຳລຸງຮັກສາ ແລະ ການທົດສອບປະຈຳ ຂອງໝໍ້ອົບໄອນ້ຳ</h2>
+<div class="tbl formhead"><table>
+<tr><th>SOP No.</th><td>SOP-ENG-STE-001</td><th>Revision</th><td>00</td><th>Effective</th><td>____/____/______</td></tr>
+<tr><th>Title</th><td colspan="5">Preventive Maintenance and Routine Testing of Steam Sterilizer EQ-STE-___</td></tr>
+<tr><th>Review</th><td colspan="5">ທຸກ 2 ປີ ຫຼື ເມື່ອມີການປ່ຽນແປງ</td></tr>
+</table></div>
+
+<h3>1. ຈຸດປະສົງ (Purpose)</h3>
+<p>ກຳນົດຂັ້ນຕອນ PM, calibration ແລະ ການທົດສອບປະຈຳ ຂອງໝໍ້ອົບໄອນ້ຳ ເພື່ອຮັບປະກັນວ່າເຄື່ອງຢູ່ໃນ <b>ສະພາບທີ່ໄດ້ຮັບການຮັບຮອງ (validated state)</b> ແລະ ໃຫ້ SAL ≤10<sup>-6</sup> ຕາມ ISO 17665 ແລະ GMP (PIC/S, WHO).</p>
+
+<h3>2. ຂອບເຂດ (Scope)</h3>
+<p>ໃຊ້ກັບໝໍ້ອົບໄອນ້ຳ EQ-STE-___ ໃນພື້ນທີ່ ________ ແລະ utilities ທີ່ກ່ຽວຂ້ອງ (clean steam, compressed air, cooling water, ໄຟຟ້າ). ບໍ່ລວມເຖິງການ validate load ໃໝ່ (ເບິ່ງ VMP).</p>
+
+<h3>3. ຄວາມຮັບຜິດຊອບ (Responsibilities)</h3>
+<ul>
+<li><b>Operator (Production):</b> ການທົດສອບປະຈຳວັນ (BD, leak), ທຳຄວາມສະອາດ, ບັນທຶກ logbook, ແຈ້ງຄວາມຜິດປົກກະຕິທັນທີ.</li>
+<li><b>Engineering Technician:</b> ປະຕິບັດ PM ແລະ calibration ຕາມ F-01, LOTO, ທົດສອບຫຼັງ PM.</li>
+<li><b>Engineering Supervisor:</b> ວາງແຜນ PM, ກວດບັນທຶກ, ອະນຸມັດອາໄຫຼ່, ຕິດຕາມ KPI.</li>
+<li><b>QC Microbiology:</b> ບົ່ມ ແລະ ອ່ານຜົນ BI.</li>
+<li><b>QA:</b> ທົບທວນ ແລະ ອະນຸມັດບັນທຶກ, deviations, change control, ປ່ອຍເຄື່ອງກັບມາໃຊ້.</li>
+</ul>
+
+<h3>4. ຄຳນິຍາມ (Definitions)</h3>
+<p><b>PM</b> Preventive Maintenance · <b>CM</b> Corrective Maintenance · <b>BD</b> Bowie-Dick test · <b>BI</b> Biological Indicator · <b>CI</b> Chemical Indicator · <b>PCD</b> Process Challenge Device · <b>NCG</b> Non-condensable gases · <b>F<sub>0</sub></b> ເວລາຂ້າເຊື້ອທຽບເທົ່າທີ່ 121.1 °C · <b>LOTO</b> Lock-out/Tag-out · <b>ALCOA+</b> Attributable, Legible, Contemporaneous, Original, Accurate + Complete, Consistent, Enduring, Available.</p>
+
+<h3>5. ຄວາມປອດໄພ (Safety)</h3>
+<div class="crit">
+• ຫ້າມເປີດປະຕູ ຫຼື ຖອດທໍ່ ຂະນະທີ່ມີຄວາມດັນ — ກວດ gauge = 0 bar(g) ແລະ ອຸນຫະພູມ chamber &lt;60 °C.<br>
+• LOTO ໄຟຟ້າ, ໄອນ້ຳ, ອາກາດອັດ ແລະ ນ້ຳ ກ່ອນເຮັດ PM ທຸກຄັ້ງ; ໃສ່ປ້າຍ "UNDER MAINTENANCE — DO NOT USE".<br>
+• PPE: ຖົງມືກັນຄວາມຮ້ອນ, ແວ່ນຕາ, ເກີບເຊບຕີ້. ລະວັງໄອນ້ຳຮ້ອນ ແລະ ນ້ຳ condensate.<br>
+• ຫ້າມ bypass interlock ຫຼື safety valve ເວັ້ນແຕ່ໃນການທົດສອບທີ່ໄດ້ຮັບອະນຸຍາດ.
+</div>
+
+<h3>6. ອຸປະກອນ ແລະ ວັດສະດຸ (Materials)</h3>
+<ul>
+<li>Bowie-Dick test pack (ISO 11140-4 / ISO 11140-5) · BI <i>G. stearothermophilus</i> ≥10<sup>6</sup> (ISO 11138-3) + PCD · CI Type 5 ຫຼື 6 (ISO 11140-1)</li>
+<li>Reference thermometer/data logger calibrated (ISO 17025), dead-weight/reference pressure gauge</li>
+<li>ອາໄຫຼ່: door gasket, filters, seals ຕາມລາຍການຜູ້ຜະລິດ; ຊຸດເຄື່ອງມື</li>
+</ul>
+
+<h3>7. ຂັ້ນຕອນ (Procedure)</h3>
+<h4>7.1 ການທົດສອບປະຈຳວັນ (Operator)</h4>
+<ol>
+<li>ກວດ utilities: ຄວາມດັນ clean steam ____ bar(g), ອາກາດອັດ ____ bar(g), ນ້ຳເຢັນ, ໄຟຟ້າ. ບັນທຶກໃນ logbook.</li>
+<li>ເຮັດຄວາມສະອາດ drain strainer; ກວດ door gasket ດ້ວຍຕາ (ບໍ່ມີຮອຍແຕກ/ຜິດຮູບ).</li>
+<li>ແລ່ນ warm-up cycle (chamber ເປົ່າ).</li>
+<li>ແລ່ນ <b>Vacuum leak test</b> → ເກນ ≤1.3 mbar/min. ບໍ່ຜ່ານ → ຢຸດໃຊ້, ແຈ້ງ Engineering.</li>
+<li>ວາງ BD test pack ຢູ່ <b>ກາງ chamber ດ້ານລຸ່ມ ໃກ້ປະຕູ/drain</b> (ຕາມຜູ້ຜະລິດ) ໃນ chamber ເປົ່າ → ແລ່ນ BD cycle (134 °C, 3.5 min).</li>
+<li>ອ່ານຜົນ: ປ່ຽນສີສະໝ່ຳສະເໝີ = <b>Pass</b>. ບໍ່ສະໝ່ຳສະເໝີ = <b>Fail</b> → ເຮັດຊ້ຳ 1 ຄັ້ງ; ຖ້າບໍ່ຜ່ານອີກ → ຢຸດເຄື່ອງ, ເປີດ Deviation F-04.</li>
+<li>ຕິດ BD sheet + printout ໃນ logbook, ລົງລາຍເຊັນ ແລະ ວັນທີ.</li>
+</ol>
+<h4>7.2 BI test ປະຈຳອາທິດ</h4>
+<ol>
+<li>ໃສ່ BI ໃນ PCD, ວາງທີ່ cold spot ທີ່ກຳນົດໃນ PQ ຂອງ load ປົກກະຕິ.</li>
+<li>ຫຼັງ cycle: ສົ່ງ BI ໃຫ້ QC ພ້ອມ positive control (ລັອດດຽວກັນ ບໍ່ຜ່ານ cycle). ບົ່ມ 55–60 °C ຕາມເວລາທີ່ຜູ້ຜະລິດ BI ກຳນົດ.</li>
+<li>BI ເຕີບໂຕ (positive) → ກັກ (quarantine) ທຸກ load ຕັ້ງແຕ່ BI negative ຄັ້ງສຸດທ້າຍ, ເປີດ Deviation, ປະເມີນ recall ຕາມ AAMI ST79.</li>
+</ol>
+<h4>7.3 PM ຕາມແຜນ (Technician)</h4>
+<ol>
+<li>ຮັບ Work Order; ປະສານ Production ເພື່ອຢຸດເຄື່ອງ; ກະກຽມ F-01, ອາໄຫຼ່, ເຄື່ອງມືທີ່ calibrate ແລ້ວ.</li>
+<li>Shut down → ລະບາຍຄວາມດັນ → ລໍໃຫ້ເຢັນ → LOTO.</li>
+<li>ປະຕິບັດລາຍການໃນ F-01 ຕາມຄວາມຖີ່ (ພາກ 4.3). ບັນທຶກຄ່າວັດ ທັນທີ ດ້ວຍປາກກາໝຶກ (ALCOA+); ແກ້ໄຂແບບຂີດເສັ້ນດຽວ + ລາຍເຊັນ + ວັນທີ + ເຫດຜົນ.</li>
+<li>Calibration: ປຽບທຽບກັບ reference ທີ່ 3 ຈຸດ; ຖ້າເກີນເກນ (ອຸນຫະພູມ ±0.5 °C, ຄວາມດັນ ±1 % FS ຫຼື ຕາມ URS) → ປັບ (adjust) ແລະ ບັນທຶກ <i>as found / as left</i>; ຖ້າ <i>as found</i> ເກີນເກນ → ເປີດ Deviation ເພື່ອປະເມີນຜົນກະທົບຕໍ່ batch ທີ່ຜ່ານມາ.</li>
+<li>ຖອດ LOTO; ແລ່ນ post-PM test: leak test + BD (+ BI 3 runs ຖ້າປ່ຽນ critical part).</li>
+<li>ສົ່ງ F-01 ໃຫ້ Supervisor ແລະ QA ທົບທວນ; QA ອະນຸມັດ → ຕິດປ້າຍ "Ready for use".</li>
+</ol>
+<h4>7.4 ການສ້ອມແປງ (CM) ແລະ Change control</h4>
+<ol>
+<li>ທຸກຄວາມເສຍຫາຍ → ບັນທຶກ Work Order CM; ການປ່ຽນແບບ <b>like-for-like</b> → ທົດສອບຫຼັງສ້ອມຕາມພາກ 4.3.</li>
+<li>ການປ່ຽນທີ່ບໍ່ແມ່ນ like-for-like (software, cycle parameter, piping, sensor type) → ຕ້ອງຜ່ານ <b>Change Control</b> ແລະ QA ກຳນົດຂອບເຂດ requalification ກ່ອນເລີ່ມ.</li>
+</ol>
+
+<h3>8. ບັນທຶກ (Records)</h3>
+<p>Logbook ເຄື່ອງ, F-01 PM checklist, calibration certificates, BD sheets, BI results, cycle printouts/electronic records (ສຳຮອງຂໍ້ມູນ, audit trail ຕາມ Annex 11), Deviation F-04. ເກັບຮັກສາ ≥1 ປີຫຼັງວັນໝົດອາຍຸຂອງ batch ທີ່ກ່ຽວຂ້ອງ ຫຼື ຕາມນະໂຍບາຍໂຮງງານ (ຢ່າງໜ້ອຍ 5 ປີ).</p>
+
+<h3>9. ເອກະສານອ້າງອີງ</h3>
+<p>ISO 17665:2024; EN 285; ANSI/AAMI ST79; AAMI EQ89; ISO 11138; ISO 11140; WHO TRS 1019 Annex 3; WHO TRS 1044 Annex 2; PIC/S PE 009 Annex 1, 11, 15. (ລາຍລະອຽດພາກ 10)</p>
+
+<h3>10. ປະຫວັດການແກ້ໄຂ (Revision history)</h3>
+<div class="tbl"><table><tr><th>Rev.</th><th>ວັນທີ</th><th>ລາຍລະອຽດ</th><th>ຜູ້ແກ້</th></tr><tr><td>00</td><td></td><td>ສະບັບທຳອິດ</td><td></td></tr></table></div>
+
+<div class="tbl sig"><table>
+<tr><th></th><th>ຊື່</th><th>ຕຳແໜ່ງ</th><th>ລາຍເຊັນ</th><th>ວັນທີ</th></tr>
+<tr><th>ຜູ້ຂຽນ / Prepared</th><td></td><td>Engineering</td><td></td><td></td></tr>
+<tr><th>ຜູ້ກວດ / Reviewed</th><td></td><td>Production / Validation</td><td></td><td></td></tr>
+<tr><th>ຜູ້ອະນຸມັດ / Approved</th><td></td><td>QA Manager</td><td></td><td></td></tr>
+</table></div>
+
+<!-- ============ 6 ============ -->
+<h2 id="s6" class="page">6 · ຟອມ F-01: PM Checklist <span class="en">Form F-01 — Steam sterilizer PM record</span></h2>
+<div class="tbl formhead"><table>
+<tr><th>Equip. ID</th><td>EQ-STE-___</td><th>Work Order No.</th><td></td><th>ປະເພດ PM</th><td><span class="box"></span>ເດືອນ <span class="box"></span>3 ເດືອນ <span class="box"></span>6 ເດືອນ <span class="box"></span>ປີ</td></tr>
+<tr><th>ວັນທີ</th><td></td><th>ເວລາເລີ່ມ / ສິ້ນສຸດ</th><td></td><th>LOTO No.</th><td></td></tr>
+</table></div>
+<div class="tbl"><table>
+<tr><th>#</th><th>ລາຍການກວດ</th><th>ເກນຍອມຮັບ</th><th>ຄ່າທີ່ພົບ / As found</th><th>As left</th><th class="c">OK</th><th class="c">NG</th><th class="c">N/A</th></tr>
+<tr><td>1</td><td>Door gasket — ສະພາບ, ຮອຍແຕກ, ຄວາມຢືດຢຸ່ນ</td><td>ບໍ່ມີຄວາມເສຍຫາຍ</td><td class="blank"></td><td class="blank"></td><td></td><td></td><td></td></tr>
+<tr><td>2</td><td>Door interlock — ເປີດບໍ່ໄດ້ເມື່ອ P &gt; 0.2 bar ຫຼື cycle ກຳລັງແລ່ນ</td><td>Interlock ເຮັດວຽກ</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>3</td><td>Safety valve — lift test / set pressure</td><td>ເປີດທີ່ ____ bar(g)</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>4</td><td>Steam traps &amp; strainers</td><td>ບໍ່ອຸດ/ບໍ່ຮົ່ວ</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>5</td><td>Vacuum pump — ສຽງ, ສັ່ນ, ring water, seal</td><td>ປົກກະຕິ; vacuum ≤ ____ mbar(a)</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>6</td><td>Solenoid / pneumatic valves — ການເຮັດວຽກ, ຮົ່ວ</td><td>ເປີດ-ປິດຄົບ, ບໍ່ຮົ່ວ</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>7</td><td>ທໍ່, insulation, ຂໍ້ຕໍ່</td><td>ບໍ່ຮົ່ວ, insulation ຄົບ</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>8</td><td>ລະບົບໄຟຟ້າ — terminal, contactor, earth</td><td>ແໜ້ນ, ບໍ່ໄໝ້; earth ≤0.1 Ω</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>9</td><td>Vent filter / HEPA — ສະພາບ, integrity test</td><td>Pass (ຕາມຜູ້ຜະລິດ filter)</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>10</td><td>Chamber temp. probe — calibration @ 121 °C</td><td>±0.5 °C</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>11</td><td>Chamber temp. probe — calibration @ 134 °C</td><td>±0.5 °C</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>12</td><td>Drain temp. probe — calibration</td><td>±0.5 °C</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>13</td><td>Chamber pressure transmitter — 3 ຈຸດ</td><td>±1 % FS (ຫຼື ±____ mbar)</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>14</td><td>Jacket pressure gauge</td><td>±____ bar</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>15</td><td>Printer / recorder / ເວລາ controller</td><td>ອ່ານໄດ້; ເວລາຕ່າງ ≤1 min</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>16</td><td>Backup ຂໍ້ມູນ &amp; ກວດ audit trail</td><td>Backup ສຳເລັດ; ບໍ່ມີການແກ້ໄຂທີ່ບໍ່ອະນຸຍາດ</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>17</td><td>Steam quality: NCG / Dryness / Superheat</td><td>≤3.5 % / ≥0.95 / ≤25 K</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>18</td><td>Post-PM vacuum leak test</td><td>≤1.3 mbar/min</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>19</td><td>Post-PM Bowie-Dick test</td><td>Pass</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>20</td><td>ທຳຄວາມສະອາດພື້ນທີ່, ເກັບເຄື່ອງມື, ຖອດ LOTO</td><td>ສຳເລັດ</td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></div>
+<div class="tbl"><table>
+<tr><th>ອາໄຫຼ່ທີ່ປ່ຽນ (Part No. / Qty)</th><td style="height:40px"></td></tr>
+<tr><th>ເຄື່ອງມືວັດທີ່ໃຊ້ (ID / Cal. due)</th><td style="height:40px"></td></tr>
+<tr><th>ຂໍ້ສັງເກດ / Deviation No.</th><td style="height:40px"></td></tr>
+<tr><th>ຜົນ</th><td><span class="box"></span>ພ້ອມໃຊ້ (Ready for use) &nbsp; <span class="box"></span>ບໍ່ພ້ອມ — ເປີດ F-04 &nbsp; <span class="box"></span>ຕ້ອງການ Change control</td></tr>
+</table></div>
+<div class="tbl sig"><table>
+<tr><th></th><th>ຊື່</th><th>ລາຍເຊັນ</th><th>ວັນທີ</th></tr>
+<tr><th>ຜູ້ປະຕິບັດ (Technician)</th><td></td><td></td><td></td></tr>
+<tr><th>ຜູ້ກວດ (Eng. Supervisor)</th><td></td><td></td><td></td></tr>
+<tr><th>QA</th><td></td><td></td><td></td></tr>
+</table></div>
+
+<!-- ============ 7 ============ -->
+<h2 id="s7" class="page">7 · ຟອມ F-02: OQ Protocol &amp; Report <span class="en">Operational Qualification</span></h2>
+<div class="tbl formhead"><table>
+<tr><th>Protocol No.</th><td>OQ-STE-___-01</td><th>Equip. ID</th><td>EQ-STE-___</td></tr>
+<tr><th>ອ້າງອີງ IQ</th><td>IQ-STE-___ (ອະນຸມັດວັນທີ ______)</td><th>Cycles ທີ່ທົດສອບ</th><td><span class="box"></span>121 °C/__ min <span class="box"></span>134 °C/__ min <span class="box"></span>BD <span class="box"></span>Leak <span class="box"></span>Liquid</td></tr>
+</table></div>
+
+<h3>A. ຈຸດປະສົງ ແລະ ຂອບເຂດ</h3>
+<p>ພິສູດເປັນເອກະສານວ່າເຄື່ອງ ເຮັດວຽກຕາມ URS ແລະ ສະເປັກຜູ້ຜະລິດ ຕະຫຼອດຊ່ວງການເຮັດວຽກ ໂດຍບໍ່ມີ load (ISO 17665:2024 — OQ; WHO TRS 1019 App. 6; PIC/S Annex 15 §3.11).</p>
+
+<h3>B. ເງື່ອນໄຂກ່ອນເລີ່ມ (Pre-requisites)</h3>
+<div class="tbl"><table>
+<tr><th>#</th><th>ລາຍການ</th><th class="c">ຢືນຢັນ</th><th>ລາຍເຊັນ/ວັນທີ</th></tr>
+<tr><td>B1</td><td>IQ ອະນຸມັດ ແລະ deviations ທີ່ກະທົບ OQ ປິດແລ້ວ</td><td class="c"><span class="box"></span></td><td></td></tr>
+<tr><td>B2</td><td>ເຄື່ອງວັດທັງໝົດຂອງເຄື່ອງ calibrate ແລ້ວ ແລະ ບໍ່ໝົດອາຍຸ</td><td class="c"><span class="box"></span></td><td></td></tr>
+<tr><td>B3</td><td>Data logger + thermocouples calibrate ກ່ອນການສຶກສາ (±0.5 °C) — ID: ______</td><td class="c"><span class="box"></span></td><td></td></tr>
+<tr><td>B4</td><td>SOP ການໃຊ້ງານ ແລະ PM (draft ຫຼື ອະນຸມັດ) ມີຢູ່; ຜູ້ທົດສອບຜ່ານການຝຶກອົບຮົມ</td><td class="c"><span class="box"></span></td><td></td></tr>
+<tr><td>B5</td><td>Clean steam ຜ່ານການທົດສອບຄຸນນະພາບ (NCG, dryness, superheat, condensate)</td><td class="c"><span class="box"></span></td><td></td></tr>
+</table></div>
+
+<h3>C. ການທົດສອບ (Test scripts)</h3>
+<div class="tbl"><table>
+<tr><th>Test</th><th>ວິທີທົດສອບ</th><th>ເກນຍອມຮັບ</th><th>ຜົນຈິງ</th><th class="c">P/F</th><th>ລາຍເຊັນ/ວັນທີ</th></tr>
+<tr><td>OQ-01<br>Controller &amp; access</td><td>ກວດລະດັບຜູ້ໃຊ້ (operator/supervisor/admin), password, ການລັອກ parameter</td><td>ແຕ່ລະລະດັບເຂົ້າເຖິງໄດ້ສະເພາະຕາມ URS</td><td></td><td></td><td></td></tr>
+<tr><td>OQ-02<br>Cycle parameters</td><td>ພິມ/ສົ່ງອອກ recipe ທຸກ cycle, ປຽບທຽບກັບ URS</td><td>ກົງກັບ URS 100 %</td><td></td><td></td><td></td></tr>
+<tr><td>OQ-03<br>Door interlocks</td><td>ພະຍາຍາມເປີດປະຕູ: ກາງ cycle, P &gt; 0, double-door ເປີດພ້ອມກັນ</td><td>ເປີດບໍ່ໄດ້ທຸກກໍລະນີ; alarm ສະແດງ</td><td></td><td></td><td></td></tr>
+<tr><td>OQ-04<br>Alarms</td><td>ຈຳລອງ: steam P ຕ່ຳ, air P ຕ່ຳ, ນ້ຳຂາດ, over-temp, under-temp ໄລຍະ hold, vacuum fail, probe ຂາດ, door seal fail</td><td>Alarm ຖືກຕ້ອງ, cycle ຖືກຢຸດ/ໝາຍ FAIL, ບັນທຶກໃນ audit trail</td><td></td><td></td><td></td></tr>
+<tr><td>OQ-05<br>Power failure</td><td>ຕັດໄຟກາງ cycle ແລ້ວເປີດຄືນ</td><td>Cycle ໝາຍ FAIL/aborted; ຂໍ້ມູນບໍ່ເສຍ; ເຂົ້າສູ່ສະພາບປອດໄພ</td><td></td><td></td><td></td></tr>
+<tr><td>OQ-06<br>Vacuum leak test</td><td>ແລ່ນ leak test cycle ×3</td><td>≤1.3 mbar/min ທຸກຄັ້ງ</td><td>1)____ 2)____ 3)____</td><td></td><td></td></tr>
+<tr><td>OQ-07<br>Air detector</td><td>ສີດອາກາດເຂົ້າ (ຕາມ EN 285) ຂະນະ cycle</td><td>Air detector ກວດພົບ, cycle FAIL</td><td></td><td></td><td></td></tr>
+<tr><td>OQ-08<br>Bowie-Dick</td><td>BD cycle ×3 ຕິດຕໍ່ກັນ</td><td>Pass ທັງ 3</td><td>1)____ 2)____ 3)____</td><td></td><td></td></tr>
+<tr><td>OQ-09<br>Empty chamber heat distribution</td><td>Thermocouples ≥10 ຈຸດ (ມຸມ 8, ກາງ, ໃກ້ drain) + 1 ຕິດ reference probe; ແລ່ນ ×3 ຕໍ່ cycle</td><td>ທຸກຈຸດຢູ່ໃນ band (0 ຫາ +3 K) ໄລຍະ hold; ຄວາມແຕກຕ່າງ ≤2 K; equilibration ≤15/30 s; ລະບຸ cold spot</td><td>Run1____ Run2____ Run3____<br>Cold spot: TC#__</td><td></td><td></td></tr>
+<tr><td>OQ-10<br>Temp. vs pressure</td><td>ຄິດໄລ່ T ຈາກ P ໄອນ້ຳອີ່ມຕົວ ໄລຍະ hold</td><td>ΔT ≤2 K</td><td></td><td></td><td></td></tr>
+<tr><td>OQ-11<br>Hold time &amp; F<sub>0</sub></td><td>ວັດເວລາ hold ຈາກ data logger ທຽບ controller</td><td>≥ setpoint; ຕ່າງກັນ ≤ ____ s</td><td></td><td></td><td></td></tr>
+<tr><td>OQ-12<br>Steam quality</td><td>NCG, dryness, superheat ທີ່ຈຸດເຂົ້າ chamber</td><td>≤3.5 % / ≥0.95 / ≤25 K</td><td></td><td></td><td></td></tr>
+<tr><td>OQ-13<br>Vent filter</td><td>Integrity test (HEPA/0.2 µm)</td><td>Pass ຕາມສະເປັກ filter</td><td></td><td></td><td></td></tr>
+<tr><td>OQ-14<br>Data integrity</td><td>ກວດ audit trail, ເວລາ, ສຳຮອງ/ກູ້ຄືນ, e-record/e-signature (Annex 11)</td><td>ບັນທຶກຄົບ, ແກ້ໄຂບໍ່ໄດ້ໂດຍບໍ່ມີຮ່ອງຮອຍ</td><td></td><td></td><td></td></tr>
+<tr><td>OQ-15<br>Post-study calibration</td><td>ກວດ thermocouples ຫຼັງການສຶກສາ</td><td>±0.5 °C</td><td></td><td></td><td></td></tr>
+</table></div>
+
+<h3>D. ສະຫຼຸບ ແລະ ອະນຸມັດ (Summary &amp; approval)</h3>
+<div class="tbl"><table>
+<tr><th>ຈຳນວນ test</th><td>15</td><th>Pass</th><td></td><th>Fail</th><td></td><th>Deviations (F-04 No.)</th><td></td></tr>
+<tr><th colspan="2">ສະຫຼຸບ</th><td colspan="6"><span class="box"></span>OQ ຜ່ານ — ອະນຸຍາດເລີ່ມ PQ &nbsp; <span class="box"></span>OQ ບໍ່ຜ່ານ — ຕ້ອງແກ້ໄຂ ແລະ ທົດສອບຄືນ</td></tr>
+</table></div>
+<div class="tbl sig"><table>
+<tr><th></th><th>ຊື່</th><th>ລາຍເຊັນ</th><th>ວັນທີ</th></tr>
+<tr><th>ຜູ້ປະຕິບັດ (Validation)</th><td></td><td></td><td></td></tr>
+<tr><th>Engineering</th><td></td><td></td><td></td></tr>
+<tr><th>QA ອະນຸມັດ</th><td></td><td></td><td></td></tr>
+</table></div>
+
+<!-- ============ 8 ============ -->
+<h2 id="s8" class="page">8 · ຟອມ F-03: PQ Protocol &amp; Report <span class="en">Performance Qualification</span></h2>
+<div class="tbl formhead"><table>
+<tr><th>Protocol No.</th><td>PQ-STE-___-01</td><th>Equip. ID</th><td>EQ-STE-___</td></tr>
+<tr><th>ອ້າງອີງ OQ</th><td>OQ-STE-___-01 (ອະນຸມັດວັນທີ ______)</td><th>Cycle</th><td>____ °C / ____ min</td></tr>
+<tr><th>Load pattern</th><td colspan="3"><span class="box"></span>Minimum load &nbsp; <span class="box"></span>Maximum load &nbsp; <span class="box"></span>Worst-case (ອະທິບາຍ): ____________ — ແຜນຜັງ load ແນບເປັນ Attachment __</td></tr>
+</table></div>
+
+<h3>A. ຈຸດປະສົງ</h3>
+<p>ພິສູດວ່າ cycle ທີ່ກຳນົດ ໃຫ້ຜົນສະໝ່ຳສະເໝີ ກັບ load ຈິງ ແລະ ບັນລຸ SAL ≤10<sup>-6</sup> ໃນທຸກຈຸດຂອງ load ລວມທັງ cold spot (ISO 17665:2024 — PQ; PIC/S Annex 1 §8.33–8.50; WHO TRS 1044 Annex 2).</p>
+
+<h3>B. ວິທີການ (Method)</h3>
+<ol>
+<li>ຈັດ load ຕາມແຜນຜັງທີ່ອະນຸມັດ (ຊະນິດ, ຈຳນວນ, ການຫຸ້ມຫໍ່ ISO 11607, ຕຳແໜ່ງ).</li>
+<li>ໃສ່ thermocouples ≥10 ຈຸດ <b>ພາຍໃນ</b> ສິ່ງຂອງ (ຈຸດທີ່ຮ້ອນຊ້າທີ່ສຸດ: ກາງ pack, ພາຍໃນທໍ່, ຂວດນ້ຳ) + 1 ໃກ້ drain probe.</li>
+<li>ວາງ BI (≥10<sup>6</sup>, D<sub>121</sub> ≥1.5 min) ຕິດກັບ thermocouple ແຕ່ລະຈຸດ + CI Type 5/6.</li>
+<li>ແລ່ນ <b>3 runs ຕິດຕໍ່ກັນ ທີ່ສຳເລັດ</b> ຕໍ່ load pattern. ຫ້າມປັບ parameter ລະຫວ່າງ runs.</li>
+<li>ຊັ່ງນ້ຳໜັກ load ກ່ອນ/ຫຼັງ ເພື່ອກວດຄວາມແຫ້ງ; ກວດ wet pack ດ້ວຍຕາ.</li>
+<li>ສົ່ງ BI ໃຫ້ QC ບົ່ມ ພ້ອມ positive ແລະ negative controls; ຄິດໄລ່ F<sub>0</sub> = Σ 10<sup>(T−121.1)/10</sup> · Δt (min).</li>
+</ol>
+
+<h3>C. ບັນທຶກຜົນ ຕໍ່ Run</h3>
+<div class="tbl"><table>
+<tr><th>Run</th><th>ວັນທີ / Cycle No.</th><th>T min–max ໄລຍະ hold (°C)</th><th>ΔT max (K)</th><th>Equil. time (s)</th><th>Hold time (min)</th><th>F<sub>0</sub> min (cold spot)</th><th>CI</th><th>BI (+/−)</th><th>Dryness (%)</th><th class="c">P/F</th></tr>
+<tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><th>ເກນ</th><td>—</td><td>ໃນ band (0 ຫາ +3 K)</td><td>≤2</td><td>≤15 / 30</td><td>≥ setpoint</td><td>≥15 min (ຫຼື URS)</td><td>Pass</td><td>ທັງໝົດ −; Pos. control +</td><td>Metal ≤0.2 · Textile ≤1</td><td></td></tr>
+</table></div>
+
+<h3>D. ຜົນ BI ລະອຽດ</h3>
+<div class="tbl"><table>
+<tr><th>ຕຳແໜ່ງ (TC#)</th><th>BI Lot / Exp.</th><th>Run 1</th><th>Run 2</th><th>Run 3</th><th>ວັນທີອ່ານຜົນ</th><th>QC ລາຍເຊັນ</th></tr>
+<tr><td>TC1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>TC2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>TC3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>TC4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>TC5</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>TC6</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>TC7</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>TC8</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>TC9</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>TC10 (cold spot)</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Positive control</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Negative control</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table></div>
+
+<h3>E. ສະຫຼຸບ, ການກຳນົດ routine ແລະ ອະນຸມັດ</h3>
+<div class="tbl"><table>
+<tr><th>ສະຫຼຸບ</th><td><span class="box"></span>PQ ຜ່ານ — load pattern ນີ້ໄດ້ຮັບການ validate &nbsp; <span class="box"></span>PQ ບໍ່ຜ່ານ — ສືບສວນ (F-04)</td></tr>
+<tr><th>Cold spot ສຳລັບ routine BI</th><td></td></tr>
+<tr><th>Parametric release limits</th><td>T ____–____ °C, hold ≥ ____ min, F<sub>0</sub> ≥ ____ min</td></tr>
+<tr><th>Requalification ຄັ້ງຕໍ່ໄປ</th><td>____/____/______ (≤12 ເດືອນ)</td></tr>
+<tr><th>Deviations</th><td></td></tr>
+</table></div>
+<div class="tbl sig"><table>
+<tr><th></th><th>ຊື່</th><th>ລາຍເຊັນ</th><th>ວັນທີ</th></tr>
+<tr><th>Validation</th><td></td><td></td><td></td></tr>
+<tr><th>Production</th><td></td><td></td><td></td></tr>
+<tr><th>QC Microbiology</th><td></td><td></td><td></td></tr>
+<tr><th>QA ອະນຸມັດ</th><td></td><td></td><td></td></tr>
+</table></div>
+
+<!-- ============ 9 ============ -->
+<h2 id="s9" class="page">9 · ຟອມ F-04: Deviation / Non-conformance</h2>
+<div class="tbl"><table>
+<tr><th>Deviation No.</th><td>DEV-______</td><th>ວັນທີພົບ</th><td></td></tr>
+<tr><th>ທີ່ມາ</th><td colspan="3"><span class="box"></span>Routine test (BD/Leak/BI) &nbsp; <span class="box"></span>PM/Calibration &nbsp; <span class="box"></span>OQ &nbsp; <span class="box"></span>PQ &nbsp; <span class="box"></span>ອື່ນໆ ______</td></tr>
+<tr><th>ລາຍລະອຽດ (ສິ່ງທີ່ພົບ vs ເກນ)</th><td colspan="3" style="height:60px"></td></tr>
+<tr><th>ການດຳເນີນການທັນທີ</th><td colspan="3" style="height:45px"><span class="box"></span>ຢຸດໃຊ້ເຄື່ອງ &nbsp; <span class="box"></span>ກັກ load/batch: ________</td></tr>
+<tr><th>ການປະເມີນຜົນກະທົບຕໍ່ຜະລິດຕະພັນ</th><td colspan="3" style="height:55px"></td></tr>
+<tr><th>Root cause (5-Why / Fishbone)</th><td colspan="3" style="height:55px"></td></tr>
+<tr><th>Classification</th><td colspan="3"><span class="box"></span>Critical &nbsp; <span class="box"></span>Major &nbsp; <span class="box"></span>Minor</td></tr>
+<tr><th>CAPA No. / ກຳນົດເວລາ</th><td colspan="3"></td></tr>
+<tr><th>ການກວດປະສິດທິຜົນ CAPA</th><td colspan="3" style="height:40px"></td></tr>
+</table></div>
+<div class="tbl sig"><table>
+<tr><th></th><th>ຊື່</th><th>ລາຍເຊັນ</th><th>ວັນທີ</th></tr>
+<tr><th>ຜູ້ລາຍງານ</th><td></td><td></td><td></td></tr>
+<tr><th>ຫົວໜ້າພະແນກ</th><td></td><td></td><td></td></tr>
+<tr><th>QA ປິດ deviation</th><td></td><td></td><td></td></tr>
+</table></div>
+
+<!-- ============ 10 ============ -->
+<h2 id="s10">10 · ເອກະສານອ້າງອີງ <span class="en">References</span></h2>
+<ol>
+<li>ISO 17665:2024 — Sterilization of health care products — Moist heat — Requirements for the development, validation and routine control of a sterilization process for medical devices (ແທນ ISO 17665-1:2006, ISO/TS 17665-2:2009, ISO/TS 17665-3:2013).</li>
+<li>EN 285 — Sterilization — Steam sterilizers — Large sterilizers. EN 13060 — Small steam sterilizers.</li>
+<li>ANSI/AAMI ST79:2017 with Amendments A1–A4:2020 — Comprehensive guide to steam sterilization and sterility assurance in health care facilities.</li>
+<li>ANSI/AAMI EQ56 — Recommended practice for a medical equipment management program; AAMI EQ89:2015 — Guidance for the use of medical equipment maintenance strategies and procedures.</li>
+<li>ISO 11138-1 / -3 — Biological indicators; ISO 11140-1 / -4 / -5 — Chemical indicators.</li>
+<li>ISO 11607-1/-2 — Packaging for terminally sterilized medical devices.</li>
+<li>ISO 14971:2019; ICH Q9(R1) — Quality risk management.</li>
+<li>ISO/IEC 17025:2017 — Competence of testing and calibration laboratories.</li>
+<li>WHO TRS 1019 (2019), Annex 3 — Good manufacturing practices: guidelines on validation (App. 5 Computerized systems, App. 6 Qualification).</li>
+<li>WHO TRS 1044 (2022), Annex 2 — WHO GMP for sterile pharmaceutical products.</li>
+<li>WHO &amp; PAHO (2016) — Decontamination and Reprocessing of Medical Devices for Health-care Facilities.</li>
+<li>WHO (2011) — Medical Equipment Maintenance Programme Overview (WHO Medical Device Technical Series).</li>
+<li>PIC/S PE 009 — Guide to GMP: Annex 1 (Manufacture of Sterile Medicinal Products, 2022), Annex 11 (Computerised Systems), Annex 15 (Qualification and Validation).</li>
+<li>Ph. Eur. 5.1.1 — Methods of preparation of sterile products; PDA Technical Report No. 1 — Validation of Moist Heat Sterilization Processes.</li>
+</ol>
+<div class="note">ກ່ອນນຳໃຊ້: ກວດສະບັບປັດຈຸບັນຂອງແຕ່ລະມາດຕະຖານ (ISO/AAMI ມີການທົບທວນທຸກ 5 ປີ), ປັບຄ່າໃຫ້ກົງກັບຄູ່ມືຜູ້ຜະລິດ ແລະ ກົດໝາຍລາວກ່ຽວກັບ pressure vessel, ແລ້ວອະນຸມັດຜ່ານລະບົບ Document Control ຂອງໂຮງງານ.</div>
+
+</div>
+</body>
+</html>
